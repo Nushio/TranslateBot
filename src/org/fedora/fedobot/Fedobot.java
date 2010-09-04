@@ -70,37 +70,29 @@ public class Fedobot extends PircBot {
 		}catch(Exception e){}
 
 		if(message.startsWith("!translate")){
-			String[] commandWord = message.split(" ");
-			String strToTranslate = "";
-			for(int i = 1;i<commandWord.length;i++){
-				strToTranslate+=commandWord[i] + " ";
-			}
 			try{
-				String translatedText = Translate.execute(strToTranslate, Language.AUTO_DETECT, Language.ENGLISH);
+				String translatedText = Translate.execute(message.replace("!translate ",""), Language.AUTO_DETECT, Language.ENGLISH);
 				sendMessage(channel, translatedText);
 			}catch(Exception e){
 			}
 		}
 		else if(message.startsWith("!traduzir")){
-			String[] commandWord = message.split(" ");
-			String strToTranslate = "";
-			for(int i = 1;i<commandWord.length;i++){
-				strToTranslate+=commandWord[i] + " ";
-			}
 			try{
-				String translatedText = Translate.execute(strToTranslate, Language.AUTO_DETECT, Language.PORTUGUESE);
+				String translatedText = Translate.execute(message.replace("!traduzir ",""), Language.AUTO_DETECT, Language.PORTUGUESE);
 				sendMessage(channel, translatedText);
 			}catch(Exception e){
 			}
 		}
-		else if(message.startsWith("!traducir")||message.startsWith("!traduce")){
-			String[] commandWord = message.split(" ");
-			String strToTranslate = "";
-			for(int i = 1;i<commandWord.length;i++){
-				strToTranslate+=commandWord[i] + " ";
-			}
+		else if(message.startsWith("!traducir")){
 			try{
-				String translatedText = Translate.execute(strToTranslate, Language.AUTO_DETECT, Language.SPANISH);
+				String translatedText = Translate.execute(message.replace("!traducir ",""), Language.AUTO_DETECT, Language.SPANISH);
+				sendMessage(channel, translatedText);
+			}catch(Exception e){
+			}
+		}
+		else if(message.startsWith("!traduce")){
+			try{
+				String translatedText = Translate.execute(message.replace("!traduce ",""), Language.AUTO_DETECT, Language.SPANISH);
 				sendMessage(channel, translatedText);
 			}catch(Exception e){
 			}
