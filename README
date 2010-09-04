@@ -1,0 +1,22 @@
+This is an IRC Translation Bot. 
+I made it for English / Spanish / Portuguese translations. 
+
+It relies on Google Translate. 
+
+The code is GPLv3. Feel free to modify as you see fit. 
+
+Usage:
+!translate [text to translate]
+Translates any language, to english
+
+!traducir [text to translate]
+Translates any language, to spanish
+
+!traduzir [text to translate]
+Translates any language, to portuguese. 
+
+!monitor #irc-channel language_you_dont_speak language_you_speak
+Usage for langauge: en, es, pt. 
+
+!demonitor #irc-channel language_you_dont_speak
+Removes room monitoring. 
